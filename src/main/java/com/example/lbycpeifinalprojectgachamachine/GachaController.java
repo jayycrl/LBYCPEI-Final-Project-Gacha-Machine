@@ -6,6 +6,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.event.*;
 
@@ -17,12 +20,27 @@ public class GachaController {
     public void loadItemPoolsScene(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+        AnchorPane itemPoolsBackground = new AnchorPane();
+
         // Create the new scene
-        Parent root = FXMLLoader.load(getClass().getResource("ItemPools.fxml"));
-        Scene itemPools = new Scene(root, 1280, 720);
+        Parent root = FXMLLoader.load(getClass().getResource("Prize.fxml"));
+        Scene newScene = new Scene(root);
         currentStage.setTitle("Gacha Machine");
 
         // Set the scene of the current stage to the new scene
-        currentStage.setScene(itemPools);
+        currentStage.setScene(newScene);
+    }
+
+    @FXML
+    public void loadMainMenuScene(ActionEvent event) throws IOException {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Create the new scene
+        Parent root = FXMLLoader.load(getClass().getResource("Gacha-view.fxml"));
+        Scene newScene = new Scene(root);
+        currentStage.setTitle("Gacha Machine");
+
+        // Set the scene of the current stage to the new scene
+        currentStage.setScene(newScene);
     }
 }
