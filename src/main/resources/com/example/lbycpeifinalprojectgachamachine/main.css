@@ -1,3 +1,26 @@
 .background {
+    -fx-background-color: rgb(40, 40, 44);
+}
+
+.background2 {
     -fx-background-color: rgb(235, 235, 235);
+}
+
+.table {
+    -fx-border-color: white;
+    -fx-border-radius: 8px;
+}
+
+.button {
+    -fx-background-color: none;
+    -fx-border-radius: 8px;
+}
+
+.button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-border-color: rgb(155, 155, 155);
+}
+
+.button:pressed {
+    -fx-background-color: rgba(255, 170, 60, 0.7);
 }
