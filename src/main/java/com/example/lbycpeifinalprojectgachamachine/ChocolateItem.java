@@ -1,10 +1,17 @@
 package com.example.lbycpeifinalprojectgachamachine;
 
-public abstract class Item implements ItemInterface {
+public class ChocolateItem extends Item {
     public double rarity;
     public String itemName;
     public String description;
     public String image;
+
+    public ChocolateItem(String itemName, String description, double rarity, String image) {
+        this.rarity = rarity;
+        this.itemName = itemName;
+        this.description = description;
+        this.image = image;
+    }
 
     @Override
     public double getRarity() {

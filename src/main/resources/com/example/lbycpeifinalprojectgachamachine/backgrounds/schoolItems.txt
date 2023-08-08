@@ -1,0 +1,4 @@
+School items,Laptop,Muji pen,Correction tape,"Free Skip Class" ticket,Scientific calculator
+2,1,1,3,2
+A MacBook Pro,Useful for making mistakes in tests,Show this to your teacher and you're good,An engineer's best friend
+items/School Items/Laptop.png,items/School Items/MujiPen.png,items/School Items/CorrectionTape.png,items/School Items/ticket.png,items/School Items/ScientificCalculator.png

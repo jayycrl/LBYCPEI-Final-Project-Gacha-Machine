@@ -14,6 +14,7 @@ public class Gacha extends Application {
         Scene scene = new Scene(fxmlLoader.load(),1280,720);
         stage.setTitle("Gacha Machine");
         stage.setScene(scene);
+
         stage.show();
     }
 

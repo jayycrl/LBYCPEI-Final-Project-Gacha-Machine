@@ -1,9 +1,0 @@
-School items
-Laptop,Muji pen,Correction tape,"Free Skip Class" ticket,Scientific calculator
-2,1,1,3,2
-A MacBook Pro,Useful for making mistakes in tests,Show this to your teacher and you're good,An engineer's best friend
-***
-Chocolate
-Toblerone,KitKat,Oreo,1 Hershey's Kisses,Box of Ferrero Rocher
-2,1,2,1,3
-A bar of Toblerone,A bar of KitKat,A pack of Oreos,A single Hershey's Kiss,A whole box of Ferrero Rocher

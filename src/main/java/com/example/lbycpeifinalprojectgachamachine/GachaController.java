@@ -13,9 +13,11 @@ import javafx.stage.Stage;
 import javafx.event.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.EventObject;
 
 public class GachaController {
+    ItemDatabase database = new ItemDatabase();
     @FXML
     public void loadItemPoolsScene(ActionEvent event) throws IOException {
         Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -42,5 +44,12 @@ public class GachaController {
 
         // Set the scene of the current stage to the new scene
         currentStage.setScene(newScene);
+    }
+
+    @FXML
+    public void displayRandomItem() {
+        database.initializeDatabase();
+
+        System.out.println(database.getRandomItem(database.chocolateItems).getItemName());
     }
 }
