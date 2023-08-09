@@ -26,7 +26,7 @@
                   <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@items/Oshi%20No%20Ko%20Pins/All%20Oshi%20No%20Ko%20Pins.png" />
+                        <Image url="@items/Oshi No Ko Pins/All Oshi No Ko Pins.png" />
                      </image></ImageView>
                </children>
             </HBox>
