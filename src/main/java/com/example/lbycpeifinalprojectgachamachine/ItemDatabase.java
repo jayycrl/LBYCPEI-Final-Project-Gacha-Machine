@@ -9,19 +9,21 @@ public class ItemDatabase {
     ArrayList<ChocolateItem> chocolateItems = new ArrayList<>();
     ArrayList<SchoolItem> schoolItems = new ArrayList<>();
     ArrayList<OshiNoKoItem> oshiNoKoItems = new ArrayList<>();
+    ArrayList<Item> inventory = new ArrayList<>();
 
+    // adds items to database.
     public void initializeDatabase() {
-        chocolateItems.add(new ChocolateItem("Toblerone","A bar of Toblerone",0.14,"items/Chocolates/Toblerone.png"));
-        chocolateItems.add(new ChocolateItem("KitKat","A bar of KitKat",0.35,"items/Chocolates/KitKat.png"));
-        chocolateItems.add(new ChocolateItem("Oreo","A pack of Oreos",0.14,"items/Chocolates/Oreo.png"));
-        chocolateItems.add(new ChocolateItem("1 Hershey's Kisses","A single Hershey's Kiss",0.35,"items/Chocolates/1 single Kisses.png"));
-        chocolateItems.add(new ChocolateItem("Box of Ferrero Rocher","A whole box of Ferrero Rocher",0.02,"items/Chocolates/Whole box of Ferrero.png"));
+        chocolateItems.add(new ChocolateItem("Toblerone","A bar of Toblerone",0.14,"/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/Toblerone.png"));
+        chocolateItems.add(new ChocolateItem("KitKat","A bar of KitKat",0.35,"/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/KitKat.png"));
+        chocolateItems.add(new ChocolateItem("Oreo","A pack of Oreos",0.14,"/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/Oreo.png"));
+        chocolateItems.add(new ChocolateItem("1 Hershey's Kisses","A single Hershey's Kiss",0.35,"/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/1 single Kisses.png"));
+        chocolateItems.add(new ChocolateItem("Box of Ferrero Rocher","A whole box of Ferrero Rocher",0.02,"/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/Whole box of Ferrero.png"));
 
-        schoolItems.add(new SchoolItem("Laptop","A MacBook Pro", 0.14, "items/School Items/Laptop.png"));
-        schoolItems.add(new SchoolItem("Muji pen","Fancy pen", 0.35, "items/School Items/MujiPen.png"));
-        schoolItems.add(new SchoolItem("Correction tape","Useful for making mistakes in tests", 0.35, "items/School Items/CorrectionTape.png"));
-        schoolItems.add(new SchoolItem("Free Skip Class ticket","Show this to your teacher and you're good", 0.02, "items/School Items/ticket.png"));
-        schoolItems.add(new SchoolItem("Scientific calculator","An engineer's best friend", 0.14, "items/School Items/ScientificCalculator.png"));
+        schoolItems.add(new SchoolItem("Laptop","A MacBook Pro", 0.14, "/com/example/lbycpeifinalprojectgachamachine/items/School Items/Laptop.png"));
+        schoolItems.add(new SchoolItem("Muji pen","Fancy pen", 0.35, "/com/example/lbycpeifinalprojectgachamachine/items/School Items/MujiPen.png"));
+        schoolItems.add(new SchoolItem("Correction tape","Useful for making mistakes in tests", 0.35, "/com/example/lbycpeifinalprojectgachamachine/items/School Items/CorrectionTape.png"));
+        schoolItems.add(new SchoolItem("Free Skip Class ticket","Show this to your teacher and you're good", 0.02, "/com/example/lbycpeifinalprojectgachamachine/items/School Items/ticket.png"));
+        schoolItems.add(new SchoolItem("Scientific calculator","An engineer's best friend", 0.14, "/com/example/lbycpeifinalprojectgachamachine/items/School Items/ScientificCalculator.png"));
     }
 
     // types in java are invariant,
@@ -34,6 +36,7 @@ public class ItemDatabase {
         return array.get(index);
     }
 
+    // gets the nth item of a certain rarity from an ArrayList array.
     public Item getNthItemOfRarity(ArrayList<? extends Item> array, double rarity, int n) {
         int count = 0;
 
@@ -48,6 +51,7 @@ public class ItemDatabase {
         return null;
     }
 
+    // gets one random item from a given ArrayList array.
     public Item getRandomItem(ArrayList<? extends Item> array) {
         initializeDatabase();
         int nextRandom = randomGenerator.nextInt(100);
@@ -56,7 +60,6 @@ public class ItemDatabase {
         if (nextRandom >= 98) {
             for (int i = 0; i < array.size(); i++) {
                 if (getItem(array, i).getRarity() == 0.02) {
-                    System.out.println(getItem(array, i));
                     return getItem(array, i);
                 }
             }
@@ -65,7 +68,6 @@ public class ItemDatabase {
         else if (nextRandom >= 83) {
             for (int i = 0; i < array.size(); i++) {
                 if (getItem(array, i).getRarity() == 0.14) {
-                    System.out.println(getItem(array, i));
                     return getItem(array, i);
                 }
             }
@@ -74,7 +76,6 @@ public class ItemDatabase {
         else if (nextRandom >= 69) {
             for (int i = 0; i < array.size(); i++) {
                 if (getItem(array, i).getRarity() == 0.14) {
-                    System.out.println(getNthItemOfRarity(array, 0.14, 2));
                     return getNthItemOfRarity(array, 0.14, 2);
                 }
             }
@@ -83,7 +84,6 @@ public class ItemDatabase {
         else if (nextRandom >= 34) {
             for (int i = 0; i < array.size(); i++) {
                 if (getItem(array, i).getRarity() == 0.35) {
-                    System.out.println(getItem(array, i));
                     return getItem(array, i);
                 }
             }
@@ -98,5 +98,17 @@ public class ItemDatabase {
             }
         }
         return getItem(array, 0);
+    }
+
+    // given an Item query, finds instances of that object in player inventory.
+    public int findInInventory(Item query) {
+        int foundCount = 0;
+        for (int i = 0; i < inventory.size(); i++) {
+            if (query.equals(inventory.get(i))) {
+                foundCount++;
+            }
+        }
+
+        return foundCount;
     }
 }

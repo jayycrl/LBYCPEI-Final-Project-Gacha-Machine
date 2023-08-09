@@ -1,9 +1,11 @@
 .background {
     -fx-background-color: rgb(40, 40, 44);
+    -fx-border-color: rgb(255, 170, 60);
 }
 
 .background2 {
     -fx-background-color: rgb(235, 235, 235);
+    -fx-border-color: rgb(255, 170, 60);
 }
 
 .table {
@@ -23,4 +25,13 @@
 
 .button:pressed {
     -fx-background-color: rgba(255, 170, 60, 0.7);
+}
+
+.description-pane {
+    -fx-border-color: rgb(255, 170, 60);
+    -fx-border-radius: 8px;
+}
+
+.grid-pane {
+    -fx-stroke: rgb(200, 200, 200);
 }
