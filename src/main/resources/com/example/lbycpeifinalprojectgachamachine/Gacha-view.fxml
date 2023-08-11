@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -17,19 +18,72 @@
    <children>
       <VBox alignment="CENTER_LEFT" prefHeight="720.0" prefWidth="640.0" styleClass="background" stylesheets="@main.css">
          <children>
+            <Separator prefWidth="200.0" styleClass="divider" stylesheets="@main.css">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Separator>
+            <Label text="ITEM POOLS" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Label>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@items/Chocolates/chocolate-wallpaper.jpg" />
-                     </image></ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@items/Oshi No Ko Pins/All Oshi No Ko Pins.png" />
-                     </image></ImageView>
+                  <Button fx:id="chocolateItemPoolButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#setCurrentItemPool" text="Chocolates" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@items/Chocolates/chocolate-wallpaper.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="schoolItemPoolButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#setCurrentItemPool" text="School Items" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@items/School%20items/schoolItemsBG.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="oshiNoKoItemPoolButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#setCurrentItemPool" text="Oshi No Ko" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@items/Oshi No Ko Pins/All Oshi No Ko Pins.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic Bold Italic" size="12.0" />
+                     </font>
+                  </Button>
                </children>
             </HBox>
+            <Separator prefWidth="200.0" styleClass="divider" stylesheets="@main.css">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Separator>
+            <Label text="ITEMS" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Label>
             <GridPane fx:id="itemGrid" styleClass="grid-pane" stylesheets="@main.css">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,14 +93,70 @@
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                <RowConstraints />
+                  <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Button fx:id="item1SlotButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="Toblerone" textFill="WHITE" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fx:id="itemSlot1" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@items/Chocolates/Toblerone.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="item2SlotButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="KitKat" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fx:id="itemSlot2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@items/Chocolates/KitKat.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="item3SlotButton" alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="Oreo" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fx:id="itemSlot3" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@items/Chocolates/Oreo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="item4SlotButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="1 Hershey's Kisses" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fx:id="itemSlot4" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@items/Chocolates/kisses.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="item5SlotButton" alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="Box of Ferrero Rocher" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fx:id="itemSlot5" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@items/Chocolates/ferrero.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century Gothic" size="10.0" />
+                     </font>
+                  </Button>
                </children>
                <padding>
                   <Insets bottom="20.0" top="20.0" />
@@ -65,9 +175,14 @@
                         <Font name="Century Gothic Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="43.0" prefHeight="129.0" prefWidth="564.0" text="Click on an item to show its description." textFill="WHITE" wrapText="true" />
+                  <Label fx:id="itemDescription" alignment="TOP_LEFT" layoutX="14.0" layoutY="43.0" prefHeight="129.0" prefWidth="564.0" text="Click on an item to show its description." textFill="WHITE" wrapText="true" />
                </children>
             </Pane>
+            <Separator prefWidth="200.0" styleClass="divider" stylesheets="@main.css">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Separator>
          </children>
       </VBox>
       <VBox alignment="CENTER" prefHeight="720.0" prefWidth="640.0" styleClass="background2" stylesheets="@main.css">

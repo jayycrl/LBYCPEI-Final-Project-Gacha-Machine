@@ -1,10 +1,12 @@
 package com.example.lbycpeifinalprojectgachamachine;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,48 +17,45 @@ import javafx.event.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.EventObject;
+import java.util.Objects;
 
 import javafx.animation.PauseTransition;
+import javafx.util.BuilderFactory;
 import javafx.util.Duration;
 
 public class GachaController {
     ItemDatabase database = new ItemDatabase();
 
     ArrayList<? extends Item> currentItemPool = database.chocolateItems;
-
+    String currentItemPoolName = "chocolateItems";
 
     @FXML
     GridPane itemGrid;
     @FXML
     ImageView randomItemImage;
-
     @FXML
-    public void loadItemPoolsScene(ActionEvent event) throws IOException {
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        AnchorPane itemPoolsBackground = new AnchorPane();
-
-        // Create the new scene
-        Parent root = FXMLLoader.load(getClass().getResource("Prize.fxml"));
-        Scene newScene = new Scene(root);
-        currentStage.setTitle("Gacha Machine");
-
-        // Set the scene of the current stage to the new scene
-        currentStage.setScene(newScene);
-    }
-
+    ImageView itemSlot1;
     @FXML
-    public void loadMainMenuScene(ActionEvent event) throws IOException {
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    ImageView itemSlot2;
+    @FXML
+    ImageView itemSlot3;
+    @FXML
+    ImageView itemSlot4;
+    @FXML
+    ImageView itemSlot5;
+    @FXML
+    Label itemDescription;
+    @FXML
+    Button item1SlotButton;
+    @FXML
+    Button item2SlotButton;
+    @FXML
+    Button item3SlotButton;
+    @FXML
+    Button item4SlotButton;
+    @FXML
+    Button item5SlotButton;
 
-        // Create the new scene
-        Parent root = FXMLLoader.load(getClass().getResource("Gacha-view.fxml"));
-        Scene newScene = new Scene(root);
-        currentStage.setTitle("Gacha Machine");
-
-        // Set the scene of the current stage to the new scene
-        currentStage.setScene(newScene);
-    }
     @FXML
     public void displayRandomItem() {
         Item randomItem = database.getRandomItem(currentItemPool);
@@ -64,5 +63,54 @@ public class GachaController {
         randomItemImage.setImage(image);
 
         database.inventory.add(randomItem);
+    }
+
+    @FXML
+    public void setCurrentItemPool(ActionEvent event) {
+        Button clickedButton = (Button) event.getSource();
+
+        switch (clickedButton.getId()) {
+            case "chocolateItemPoolButton" -> {
+                currentItemPool = database.chocolateItems;
+                currentItemPoolName = "chocolateItems";
+                loadItemImages(database.chocolateItems);
+            }
+            case "schoolItemPoolButton" -> {
+                currentItemPool = database.schoolItems;
+                currentItemPoolName = "schoolItems";
+                loadItemImages(database.schoolItems);
+            }
+            case "oshiNoKoItemPoolButton" -> {
+                currentItemPool = database.oshiNoKoItems;
+                currentItemPoolName = "oshiNoKoItems";
+                // loadItemImages(database.oshiNoKoItems);
+            }
+        }
+    }
+
+    @FXML
+    public void loadItemImages(ArrayList<? extends Item> arrayList) {
+        database.initializeDatabase();
+        ImageView[] itemSlots = {itemSlot1, itemSlot2, itemSlot3, itemSlot4, itemSlot5};
+        Button[] itemSlotButtons = {item1SlotButton, item2SlotButton, item3SlotButton, item4SlotButton, item5SlotButton};
+        for (int i = 0; i < itemSlots.length; i++) {
+            System.out.println(arrayList.get(i).getImage());
+            itemSlots[i].setImage(new Image(arrayList.get(i).getImage()));
+            itemSlotButtons[i].setText(arrayList.get(i).getItemName());
+        }
+    }
+
+    @FXML
+    public void loadItemDescription(ActionEvent event) {
+        database.initializeDatabase();
+        Button clickedButton = (Button) event.getSource();
+
+        switch (clickedButton.getId()) {
+            case "item1SlotButton" -> itemDescription.setText(currentItemPool.get(0).getDescription());
+            case "item2SlotButton" -> itemDescription.setText(currentItemPool.get(1).getDescription());
+            case "item3SlotButton" -> itemDescription.setText(currentItemPool.get(2).getDescription());
+            case "item4SlotButton" -> itemDescription.setText(currentItemPool.get(3).getDescription());
+            case "item5SlotButton" -> itemDescription.setText(currentItemPool.get(4).getDescription());
+        }
     }
 }

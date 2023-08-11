@@ -16,8 +16,8 @@ public class ItemDatabase {
         chocolateItems.add(new ChocolateItem("Toblerone","A bar of Toblerone",0.14,"/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/Toblerone.png"));
         chocolateItems.add(new ChocolateItem("KitKat","A bar of KitKat",0.35,"/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/KitKat.png"));
         chocolateItems.add(new ChocolateItem("Oreo","A pack of Oreos",0.14,"/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/Oreo.png"));
-        chocolateItems.add(new ChocolateItem("1 Hershey's Kisses","A single Hershey's Kiss",0.35,"/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/1 single Kisses.png"));
-        chocolateItems.add(new ChocolateItem("Box of Ferrero Rocher","A whole box of Ferrero Rocher",0.02,"/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/Whole box of Ferrero.png"));
+        chocolateItems.add(new ChocolateItem("1 Hershey's Kisses","A single Hershey's Kiss",0.35, "/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/kisses.png"));
+        chocolateItems.add(new ChocolateItem("Box of Ferrero Rocher","A whole box of Ferrero Rocher",0.02, "/com/example/lbycpeifinalprojectgachamachine/items/Chocolates/ferrero.png"));
 
         schoolItems.add(new SchoolItem("Laptop","A MacBook Pro", 0.14, "/com/example/lbycpeifinalprojectgachamachine/items/School Items/Laptop.png"));
         schoolItems.add(new SchoolItem("Muji pen","Fancy pen", 0.35, "/com/example/lbycpeifinalprojectgachamachine/items/School Items/MujiPen.png"));
@@ -38,7 +38,7 @@ public class ItemDatabase {
 
     // gets the nth item of a certain rarity from an ArrayList array.
     public Item getNthItemOfRarity(ArrayList<? extends Item> array, double rarity, int n) {
-        int count = 0;
+        int count = 1;
 
         for (int i = 0; i < array.size(); i++) {
             if (getItem(array, i).getRarity() == rarity && count == n) {
@@ -92,7 +92,6 @@ public class ItemDatabase {
         else {
             for (int i = 0; i < array.size(); i++) {
                 if (getItem(array, i).getRarity() == 0.35) {
-                    System.out.println(getNthItemOfRarity(array, 0.35, 2));
                     return getNthItemOfRarity(array, 0.35, 2);
                 }
             }

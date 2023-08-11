@@ -1,4 +1,0 @@
-Chocolate,Toblerone,KitKat,Oreo,1 Hershey's Kisses,Box of Ferrero Rocher
-2,1,2,1,3
-A bar of Toblerone,A bar of KitKat,A pack of Oreos,A single Hershey's Kiss,A whole box of Ferrero Rocher
-items/Chocolates/Toblerone.png,items/Chocolates/KitKat.png,items/Chocolates/Oreo.png,items/Chocolates/1 single Kisses.png,items/Chocolates/Whole box of Ferrero.png
