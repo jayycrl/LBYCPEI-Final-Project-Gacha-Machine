@@ -8,6 +8,10 @@
     -fx-border-color: rgb(255, 170, 60);
 }
 
+.background3 {
+    -fx-background-color: rgb(31, 31, 31);
+}
+
 .table {
     -fx-border-color: white;
     -fx-border-radius: 8px;
@@ -25,6 +29,23 @@
 
 .button:pressed {
     -fx-background-color: rgba(255, 170, 60, 0.7);
+    -fx-border-color: rgb(155, 155, 155);
+}
+
+.roll-button {
+    -fx-background-color: rgba(255, 170, 60, 1);
+    -fx-border-color: rgb(155, 155, 155);
+    -fx-border-radius: 8px;
+}
+
+.roll-button:hover {
+    -fx-background-color: rgb(204, 131, 38);
+    -fx-border-color: rgb(155, 155, 155);
+}
+
+.roll-button:pressed {
+    -fx-background-color: rgb(150, 94, 24);
+    -fx-border-color: rgb(155, 155, 155);
 }
 
 .description-pane {

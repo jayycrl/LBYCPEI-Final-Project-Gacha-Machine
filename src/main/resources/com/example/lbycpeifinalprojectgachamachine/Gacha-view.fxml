@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -18,6 +19,14 @@
    <children>
       <VBox alignment="CENTER_LEFT" prefHeight="720.0" prefWidth="640.0" styleClass="background" stylesheets="@main.css">
          <children>
+            <Label fx:id="creditsLabel" text="1000 CREDITS" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Italic" size="16.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
             <Separator prefWidth="200.0" styleClass="divider" stylesheets="@main.css">
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -37,7 +46,7 @@
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@items/Chocolates/chocolate-wallpaper.jpg" />
+                              <Image url="@items/Chocolate Items/chocolate-wallpaper.jpg" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -97,65 +106,89 @@
                   <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="item1SlotButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="Toblerone" textFill="WHITE" GridPane.rowIndex="1">
+                  <Button fx:id="item1SlotButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="1 Hershey's Kisses" textFill="WHITE" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fx:id="itemSlot1" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@items/Chocolates/Toblerone.png" />
+                              <Image url="@items/Chocolate%20Items/kisses.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                      </graphic>
                      <font>
                         <Font name="Century Gothic" size="10.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button fx:id="item2SlotButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="KitKat" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fx:id="itemSlot2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@items/Chocolates/KitKat.png" />
+                              <Image url="@items/Chocolate Items/KitKat.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
                         <Font name="Century Gothic" size="10.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <Button fx:id="item3SlotButton" alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="Oreo" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Button fx:id="item3SlotButton" alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="Toblerone" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fx:id="itemSlot3" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@items/Chocolates/Oreo.png" />
+                              <Image url="@items/Chocolate%20Items/Toblerone.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                      </graphic>
                      <font>
                         <Font name="Century Gothic" size="10.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <Button fx:id="item4SlotButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="1 Hershey's Kisses" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Button fx:id="item4SlotButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="Oreo" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fx:id="itemSlot4" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@items/Chocolates/kisses.png" />
+                              <Image url="@items/Chocolate%20Items/Oreo.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                      </graphic>
                      <font>
                         <Font name="Century Gothic" size="10.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button fx:id="item5SlotButton" alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#loadItemDescription" text="Box of Ferrero Rocher" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fx:id="itemSlot5" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@items/Chocolates/ferrero.png" />
+                              <Image url="@items/Chocolate Items/ferrero.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
                         <Font name="Century Gothic" size="10.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
                <padding>
@@ -175,7 +208,18 @@
                         <Font name="Century Gothic Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="itemDescription" alignment="TOP_LEFT" layoutX="14.0" layoutY="43.0" prefHeight="129.0" prefWidth="564.0" text="Click on an item to show its description." textFill="WHITE" wrapText="true" />
+                  <Label fx:id="itemDescription" alignment="TOP_LEFT" layoutX="14.0" layoutY="43.0" prefHeight="114.0" prefWidth="564.0" text="A small, bite-sized Hershey's chocolate. First manufactured in 1907. It is uncertain where the name 'Kisses' came from; one story says that the machines that make the chocolates makes a sound like a kiss. (Hersheyland)" textFill="WHITE" wrapText="true" />
+                  <Button fx:id="sellButton" disable="true" layoutX="384.0" layoutY="164.0" mnemonicParsing="false" onAction="#sellItem" prefHeight="25.0" prefWidth="204.0" text="SELL 1 FOR 500 CREDITS" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="itemCountLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="167.0" prefHeight="20.0" prefWidth="166.0" text="You have 0 of this item." textFill="WHITE" wrapText="true" />
+                  <Label fx:id="descriptionRarityLabel" alignment="CENTER_RIGHT" layoutX="364.0" layoutY="14.0" prefHeight="20.0" prefWidth="214.0" text="COMMON ITEM" textAlignment="RIGHT" textFill="#afafaf">
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Separator prefWidth="200.0" styleClass="divider" stylesheets="@main.css">
@@ -185,19 +229,27 @@
             </Separator>
          </children>
       </VBox>
-      <VBox alignment="CENTER" prefHeight="720.0" prefWidth="640.0" styleClass="background2" stylesheets="@main.css">
+      <VBox fx:id="rollBackground" alignment="CENTER" prefHeight="720.0" prefWidth="640.0" styleClass="background2" stylesheets="@main.css">
          <children>
-            <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@main.css">
+            <Pane prefHeight="200.0" prefWidth="200.0" styleClass="background3" stylesheets="@main.css">
                <children>
                   <ImageView fx:id="randomItemImage" fitHeight="150.0" fitWidth="150.0" layoutX="244.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="rarityLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="269.0" layoutY="6.0" prefHeight="17.0" prefWidth="100.0">
+                     <font>
+                        <Font name="Century Gothic Bold" size="16.0" />
+                     </font>
+                  </Label>
                </children></Pane>
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#displayRandomItem" prefHeight="69.0" prefWidth="130.0" text="ROLL">
+            <Button fx:id="rollButton" alignment="CENTER" mnemonicParsing="false" onAction="#displayRandomItem" prefHeight="69.0" prefWidth="229.0" styleClass="roll-button" stylesheets="@main.css" text="ROLL (100 CREDITS)">
                <font>
                   <Font name="Century Gothic Bold" size="16.0" />
                </font>
                <VBox.margin>
                   <Insets top="40.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </VBox>

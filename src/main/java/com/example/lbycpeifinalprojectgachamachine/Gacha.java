@@ -11,6 +11,7 @@ public class Gacha extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         ItemDatabase database = new ItemDatabase();
+        GachaController controller = new GachaController();
 
         FXMLLoader fxmlLoader = new FXMLLoader(Gacha.class.getResource("Gacha-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),1280,720);
@@ -18,6 +19,8 @@ public class Gacha extends Application {
         stage.setScene(scene);
 
         database.initializeDatabase();
+
+        controller.currentItem = database.getItem(database.chocolateItems, 0);
 
         stage.show();
     }

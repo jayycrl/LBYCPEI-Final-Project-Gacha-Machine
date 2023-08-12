@@ -33,23 +33,4 @@ public class OshiNoKoItem extends Item {
         return this.image;
     }
 
-    @Override
-    public void setRarity(double rarity) {
-        this.rarity = rarity;
-    }
-
-    @Override
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    @Override
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public void setImage(String image) {
-        this.image = image;
-    }
 }
